@@ -1,0 +1,13 @@
+name: FireWorks
+version: 1.0
+description:
+api-version: 1.13
+authors: [68mutuba,Toto31010]
+website: https://twitter.com/68mutuba_2
+main: io.github.mutuba.fireworks.Main
+
+commands:
+  fw:
+    permission: fireworks.*
+    description: FireWorks Generate Command.
+    permission-message: Unknown command. Type "/help" for help.
