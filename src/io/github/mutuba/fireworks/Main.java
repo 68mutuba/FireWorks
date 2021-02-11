@@ -9,6 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
 
+    public static CustomConfig config;
     public static Main instance;
 
     @Override
@@ -23,12 +24,18 @@ public class Main extends JavaPlugin implements Listener {
 
         saveDefaultConfig();
         // config.ymlを読み込みます。
-        FileConfiguration config = getConfig();
+        config = new CustomConfig(this, "config.yml");
+        config.getConfig();
+        config.saveDefaultConfig();
 
     }
 
     @Override
     public void onDisable() {
 
+    }
+
+    public static void reload() {
+        config.reloadConfig();
     }
 }

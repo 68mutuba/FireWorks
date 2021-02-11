@@ -28,11 +28,11 @@ public class FireWorks implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args[0].equalsIgnoreCase("reload")){
             Main.instance.reloadConfig();;
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',Main.instance.getConfig().getString("Message.Reload")));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',Main.config.getConfig().getString("Message.Reload")));
             return true;
         }
         if (!(sender instanceof Player)) {
-            sender.sendMessage(Main.instance.getConfig().getString("Message.Command.NotPlayer")
+            sender.sendMessage(Main.config.getConfig().getString("Message.Command.NotPlayer")
                     .replaceAll("&", "§"));
         } else {
             Player player = (Player) sender;
@@ -81,7 +81,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Ball")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Ball")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                 .replaceAll("&", "§"));
@@ -99,7 +99,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.BallLarge")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.BallLarge")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                 .replaceAll("&", "§"));
@@ -117,7 +117,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Burst")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Burst")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                 .replaceAll("&", "§"));
@@ -135,7 +135,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Creeper")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Creeper")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                 .replaceAll("&", "§"));
@@ -153,7 +153,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Star")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Star")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                 .replaceAll("&", "§"));
@@ -170,7 +170,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Ball")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Ball")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("&", "§"));
                                     }
@@ -185,7 +185,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.BallLarge")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.BallLarge")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("&", "§"));
                                     }
@@ -201,7 +201,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Burst")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Burst")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("&", "§"));
                                     }
@@ -217,7 +217,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Creeper")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Creeper")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("&", "§"));
                                     }
@@ -233,7 +233,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                         fireworks.setAmount(amount);
                                         fireworks.setItemMeta(meta);
                                         player.getInventory().addItem(fireworks);
-                                        player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Star")
+                                        player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Star")
                                                 .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                 .replaceAll("&", "§"));
                                     }
@@ -275,7 +275,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Ball")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Ball")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                     .replaceAll("&", "§"));
@@ -293,7 +293,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.BallLarge")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.BallLarge")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                     .replaceAll("&", "§"));
@@ -311,7 +311,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Burst")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Burst")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                     .replaceAll("&", "§"));
@@ -329,7 +329,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Creeper")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Creeper")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                     .replaceAll("&", "§"));
@@ -347,7 +347,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Star")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOn.Star")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("%fadeout_color%", ChatColor.of(new java.awt.Color(red_fade, green_fade, blue_fade)).toString())
                                                     .replaceAll("&", "§"));
@@ -364,7 +364,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Ball")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Ball")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("&", "§"));
                                         }
@@ -379,7 +379,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.BallLarge")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.BallLarge")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("&", "§"));
                                         }
@@ -395,7 +395,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Burst")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Burst")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("&", "§"));
                                         }
@@ -411,8 +411,8 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Creeper")
-                                                    .replaceAll(ChatColor.of(new java.awt.Color(red, green, blue)).toString(), "%first_color%")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Creeper")
+                                                    .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("&", "§"));
                                         }
                                         if (shape == 5) {
@@ -427,13 +427,13 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                             fireworks.setAmount(amount);
                                             fireworks.setItemMeta(meta);
                                             player.getInventory().addItem(fireworks);
-                                            player.sendMessage(Main.instance.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Star")
+                                            player.sendMessage(Main.config.getConfig().getString("Message.CreateFireWorks.FadeOutOff.Star")
                                                     .replaceAll("%first_color%", ChatColor.of(new java.awt.Color(red, green, blue)).toString())
                                                     .replaceAll("&", "§"));
                                         }
                                     }
                                 } catch (Exception e) {
-                                    player.sendMessage(Main.instance.getConfig().getString("Message.Command.NotNumber")
+                                    player.sendMessage(Main.config.getConfig().getString("Message.Command.NotNumber")
                                             .replaceAll("&", "§"));
 
                                 }
@@ -445,12 +445,12 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                 ItemStack fireworks = new ItemStack(Material.FIREWORK_ROCKET);
                                 ItemMeta itemMeta = fireworks.getItemMeta();
                                 List<String> lore = new ArrayList<String>();
-                                itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Item.SpecialFireWorks.DisplayName")));
+                                itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.DisplayName")));
                                 lore.add("§7§k飛翔時間: ?");
                                 lore.add("§7§k?型");
                                 lore.add("§7§k  カスタム");
                                 lore.add("§7§k  色変化:  ?");
-                                lore.add(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Item.SpecialFireWorks.Lore")));
+                                lore.add(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.Lore")));
                                 itemMeta.setLore(lore);
                                 fireworks.setAmount(amount);
                                 fireworks.setItemMeta(itemMeta);
@@ -461,20 +461,20 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                                     ItemStack fireworks = new ItemStack(Material.FIREWORK_ROCKET);
                                     ItemMeta itemMeta = fireworks.getItemMeta();
                                     List<String> lore = new ArrayList<String>();
-                                    itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Item.SpecialFireWorks.DisplayName")));
+                                    itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.DisplayName")));
                                     lore.add("§7§k飛翔時間: ?");
                                     lore.add("§7§k?型");
                                     lore.add("§7§k  カスタム");
                                     lore.add("§7§k  色変化:  ?");
-                                    lore.add(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Item.SpecialFireWorks.Lore")));
+                                    lore.add(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.Lore")));
                                     itemMeta.setLore(lore);
                                     fireworks.setAmount(amount);
                                     fireworks.setItemMeta(itemMeta);
                                     player.getInventory().addItem(fireworks);
 
-                                    player.sendMessage(Main.instance.getConfig().getString("Message.SpecialFireWorks").replaceAll("&", "§"));
+                                    player.sendMessage(Main.config.getConfig().getString("Message.SpecialFireWorks").replaceAll("&", "§"));
                                 } catch (Exception e) {
-                                    player.sendMessage(Main.instance.getConfig().getString("Message.Command.NotNumber")
+                                    player.sendMessage(Main.config.getConfig().getString("Message.Command.NotNumber")
                                             .replaceAll("&", "§"));
 
                                 }
@@ -512,9 +512,9 @@ public class FireWorks implements CommandExecutor, TabCompleter {
     }
 
     private static void help(Player player) {
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Message.Command.Help")));
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Message.Command.Random")));
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Message.Command.SpawnRandom")));
-        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Message.Command.Reload")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.Help")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.Random")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.SpawnRandom")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.Reload")));
     }
 }
