@@ -17,7 +17,7 @@ public class Main extends JavaPlugin implements Listener {
         instance = this;
 
         Bukkit.getServer().getConsoleSender().sendMessage("§a[Fire Works Plugin]");
-        Bukkit.getServer().getConsoleSender().sendMessage("§aVersion.1.0");
+        Bukkit.getServer().getConsoleSender().sendMessage("§aVersion.2.0");
 
         getCommand("fw").setExecutor(new FireWorks());
         getServer().getPluginManager().registerEvents(new Special_FireWorks(),this);

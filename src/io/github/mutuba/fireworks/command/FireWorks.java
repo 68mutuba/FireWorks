@@ -1,10 +1,9 @@
 package io.github.mutuba.fireworks.command;
 
 import io.github.mutuba.fireworks.Main;
+import io.github.mutuba.fireworks.create.CreateFireWorks;
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.FireworkEffect;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,15 +13,13 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkMeta;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class FireWorks implements CommandExecutor, TabCompleter {
 
     private List<String> arg0 = Arrays.asList("get","reload");
-    private List<String> arg1 = Arrays.asList("random", "spawnrandom");
+    private List<String> arg1 = Arrays.asList("random", "spawnrandom", "allPlayer");
+    private List<String> arg2 = Arrays.asList("random", "spawnrandom");
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -49,6 +46,43 @@ public class FireWorks implements CommandExecutor, TabCompleter {
                         FireWorks.help(player);
                     }
                     if (args.length >= 2) {
+                        if (args[1].equalsIgnoreCase("allPlayer")) {
+
+                            if (args[2].equalsIgnoreCase("random")){
+
+                                for (Player p : Bukkit.getOnlinePlayers()){
+
+                                    CreateFireWorks.createNormal(p);
+
+                                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP,2,1f);
+
+                                }
+                            }
+
+                            if (args[2].equalsIgnoreCase("spawnrandom")){
+                                for (Player p : Bukkit.getOnlinePlayers()){
+
+                                    if (args.length == 3) {
+                                        int amount = 64;
+                                        ItemStack fireworks = new ItemStack(Material.FIREWORK_ROCKET);
+                                        ItemMeta itemMeta = fireworks.getItemMeta();
+                                        List<String> lore = new ArrayList<String>();
+                                        itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.DisplayName")));
+                                        lore.add("§7§k飛翔時間: ?");
+                                        lore.add("§7§k?型");
+                                        lore.add("§7§k  カスタム");
+                                        lore.add("§7§k  色変化:  ?");
+                                        lore.add(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Item.SpecialFireWorks.Lore")));
+                                        itemMeta.setLore(lore);
+                                        fireworks.setAmount(amount);
+                                        fireworks.setItemMeta(itemMeta);
+                                        p.getInventory().addItem(fireworks);
+                                        p.playSound(p.getLocation(), Sound.ENTITY_ITEM_PICKUP,2,1f);
+                                    }
+                                }
+                            }
+                        }
+
                         if (args[1].equalsIgnoreCase("random")) {
                             if (args.length == 2) {
                                 int amount = 1;
@@ -494,18 +528,21 @@ public class FireWorks implements CommandExecutor, TabCompleter {
             List<String> retList = new ArrayList<>();
             if (args.length == 1) {
                 for (String s : arg0) {
-                    if (s.startsWith(args[0])) retList.add(s);
+                    if (s.startsWith(args[0])){
+                        retList.add(s);
+                    }
                 }
                 return retList;
             } else if (args.length == 2) {
-                for (String s : arg1){
-                    retList.add(s);
+                retList.addAll(arg1);
+                if ("get".equals(args[0])) {
+                    return retList;
                 }
-                switch (args[0].toLowerCase()) {
-                    case "get":
-                        return retList;
+            } else if (args.length == 3){
+                retList.addAll(arg2);
+                if ("allPlayer".equals(args[1])) {
+                    return retList;
                 }
-
             }
         }
         return null;
@@ -516,5 +553,7 @@ public class FireWorks implements CommandExecutor, TabCompleter {
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.Random")));
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.SpawnRandom")));
         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.Reload")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.GetAllRandom")));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.config.getConfig().getString("Message.Command.GetAllSpawnRandom")));
     }
 }
