@@ -1,0 +1,15 @@
+name: Fireworks
+version: '${project.version}'
+main: io.github.mutuba.fireworks.Main
+api-version: 1.19
+prefix: Fireworks
+authors: [ 68mutuba, usuraiyukito ]
+description: 花火プラグイン
+website: https://68mutuba.github.io
+
+commands:
+  firework:
+    permission: fireworks.*
+    description: FireWorks Generate Command.
+    aliases: [ fireworks, fw ]
+    permission-message: Unknown command. Type "/help" for

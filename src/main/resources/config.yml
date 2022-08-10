@@ -1,0 +1,61 @@
+Message:
+  Command:
+    NotNumber: "&cPlease enter a number."
+    NotPlayer: "&cPlayer only commands."
+    Help: "&6Help"
+    Random: "&6/fw get random <amount> →You'll get completely random generated fireworks."
+    SpawnRandom: "&6/fw get spawnrandom <amount> →Randomly generated fireworks will shoot upwards when you click on the ground."
+    GetAllRandom: "&6/fw get allPlayer random →Distribute fireworks of all different colors to all players."
+    GetAllSpawnRandom: "&6/fw get allPlayer spawnrandom →When you click on the ground, randomly generated fireworks will be shot upwards and distributed to everyone."
+    Reload: "&6/fw reload →Reload config.yml"
+  CreateFireWorks:
+    FadeOutOn:
+      Ball: "&fThe fireworks you just generated are 「The color of the first explosion is %first_color% &lthis color &r&f」 and 「The color of the fade out is %fadeout_color% &lthis color &r&f」&8type is the Ball &f."
+      BallLarge: "&fThe fireworks you just generated are 「The color of the first explosion is %first_color% &lthis color &r&f」 and 「The color of the fade out is %fadeout_color% &lthis color &r&f」 &8type is the Ball Large &f."
+      Burst: "&fThe fireworks you just generated are 「The color of the first explosion is %first_color% &lthis color &r&f」 and 「The color of the fade out is %fadeout_color% &lthis color &r&f」 &8type is the Blast &f."
+      Creeper: "&fThe fireworks you just generated are 「The color of the first explosion is %first_color% &lthis color &r&f」 and 「The color of the fade out is %fadeout_color% &lthis color &r&f」 &8type is the Creeper &f."
+      Star: "&fThe fireworks you just generated are 「The color of the first explosion is %first_color% &lthis color &r&f」 and 「The color of the fade out is %fadeout_color% &lthis color &r&f」 &8type is the Star &f."
+    FadeOutOff:
+      Ball: "&fThe fireworks you just generated are of 「The color of the first explosion %first_color% &lthis color &r&f」 and &8 the type is Ball."
+      BallLarge: "&fThe fireworks you just generated are of 「The color of the first explosion %first_color% &lthis color &r%f」 and &8 the type is Ball Large."
+      Burst: "&fThe fireworks you just generated are of 「The color of the first explosion %first_color% &lthis color &r&f」 and &8 the type is Burst."
+      Creeper: "&fThe fireworks you just generated are of 「The color of the first explosion %first_color% &lthis color &r&f」 and &8 the type is Creeper."
+      Star: "&fThe fireworks you just generated are of 「The color of the first explosion %first_color% &lthis color &r&f」 and &8 the type is Star."
+  SpecialFireWorks: "Click on the &6Special Fireworks &f and they will shoot off randomly when you click on the ground."
+  Reload: "&6Reload is complete."
+Item:
+  SpecialFireWorks:
+    DisplayName: "&6Special Fireworks"
+    Lore: "&7Click on the ground and the fireworks will shoot off at random!"
+
+################################################
+#Message:
+#  Command:
+#    NotNumber: "&c数字を入力してください"
+#    NotPlayer: "&cプレイヤー限定のコマンドです"
+#    Help: "&6ヘルプ"
+#    Random: "&6/fw get random <amount> →完全ランダムの生成された花火がもらえます"
+#    SpawnRandom: "&6/fw get spawnrandom <amount> →地面をクリックしたときにランダムの生成された花火が上に発射されます"
+#    GetAllRandom: "&6/fw get allPlayer random →色とりどりの花火をプレイヤー全員に配ります。"
+#    GetAllSpawnRandom: "&6/fw get allPlayer spawnrandom →地面をクリックしたときにランダムの生成された花火が上に発射される花火を全員に配ります"
+#    Reload: "&6/fw reload →config.ymlをリロードする"
+#  CreateFireWorks:
+#    FadeOutOn:
+#      Ball: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,\n&f「フェードアウトの色は%fadeout_color%&lこの色&f&f」,&7種類は小玉&fです"
+#      BallLarge: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,\n&f「フェードアウトの色は%fadeout_color%&lこの色&f&f」,&7種類は大玉&fです"
+#      Burst: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,\n&f「フェードアウトの色は%fadeout_color%&lこの色&f&f」,&7種類は破裂&fです"
+#      Creeper: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,\n&f「フェードアウトの色は%fadeout_color%&lこの色&f&f」,&7種類はクリーパー型&fです"
+#      Star: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,\n&f「フェードアウトの色は%fadeout_color%&lこの色&f&f」,&7種類は星型&fです"
+#    FadeOutOff:
+#      Ball: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,&7種類は小玉&fです"
+#      BallLarge: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,&7種類は大玉&fです"
+#      Burst: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,&7種類は破裂&fです"
+#      Creeper: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,&7種類はクリーパー型&fです"
+#      Star: "&f今生成した花火は「最初の爆発の色は%first_color%&lこの色&r&f」,&7種類は星型&fです"
+#  SpecialFireWorks: "&6特別な花火§f地面にむかってクリックしたら\nランダムで花火が打ちあがります"
+#  Reload: "&6リロード完了！"
+#Item:
+#  SpecialFireWorks:
+#    DisplayName: "&6特別な花火"
+#    Lore: "&7地面にむかってクリックしたらランダムで花火が打ちあがります"
+###################################################
